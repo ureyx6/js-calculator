@@ -1,0 +1,28 @@
+.flex-container {
+    display: flex;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    outline: 4px solid black;
+    max-width: 300px;
+    padding: 10px;
+}
+.calculator-display {
+    background-color: #D3D3D3;
+    margin: 16px;
+    width: 240px;
+    height: 20px;
+}
+.calculator-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.calculator-buttons div {
+    padding: 8px;
+    background-color: #D3D3D3;
+    margin: 16px;
+}
