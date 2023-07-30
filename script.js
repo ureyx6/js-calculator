@@ -1,9 +1,25 @@
 //calculator variables
-const operandOne = 0
-const operandTwo = 0
-const operator = ""
+let operandOne = 0
+let operandTwo = 0
+let operator = ""
+//operate function
+function operate (operator, operandOne) {
+    if (operator = "+") {
+        return addValues (operandOne, operandTwo);
+    }
+    else if (operator = "-") {
+        return subtractValues (operandOne, operandTwo);
+    }
+    else if (operator = "*") {
+        return divideValues (operandOne, operandTwo);
+    }
+    else if (operator = "/") {
+        return divideValues (operandOne, operandTwo);
+    }
+}
 
-//calculator functions
+
+//evaluation functions
 function addValues (inputOne, inputTwo) {
  return (inputOne + inputTwo);
 }
