@@ -8,6 +8,7 @@ let operandOne = null
 let operandTwo = null
 let operator = ""
 let displayData = ""
+let result = null
 //operate function
 function reset() {
     operandOne = null
@@ -53,6 +54,8 @@ numberButtons.forEach(e => {
     e.addEventListener('click', function () {
         if (display.textContent == "+" || display.textContent == "-" || display.textContent == "*" || display.textContent == "/") {
             display.textContent = ""
+        } else if (display.textContent == result) {
+            display.textContent = ""
         }
            
         display.textContent += e.textContent
@@ -68,7 +71,11 @@ operatorButtons.forEach(e => {
         }
         else if (display.textContent != "" && operandOne != null) {
             operandTwo = display.textContent
-            display.textContent = operate(parseInt(operandOne), parseInt(operandTwo))
+            result = operate(parseInt(operandOne), parseInt(operandTwo))
+            display.textContent = result
+            operandOne = display.textContent
+            operandTwo = null
+            operator = e.textContent
             return;
 
         } else if (operandOne === null) {
