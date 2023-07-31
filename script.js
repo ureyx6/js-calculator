@@ -8,18 +8,18 @@ let operandTwo = null
 let operator = ""
 let displayData = ""
 //operate function
-function operate(operandOne, operandTwo) {
+function operate(operateOne, operateTwo) {
     if (operator = "+") {
-        return addValues(operandOne, operandTwo);
+        return addValues(operateOne, operateTwo);
     }
     else if (operator = "-") {
-        return subtractValues(operandOne, operandTwo);
+        return subtractValues(operateOne, operateTwo);
     }
     else if (operator = "*") {
-        return divideValues(operandOne, operandTwo);
+        return divideValues(operateOne, operateTwo);
     }
     else if (operator = "/") {
-        return divideValues(operandOne, operandTwo);
+        return divideValues(operateOne, operateTwo);
     }
 }
 
@@ -47,4 +47,15 @@ numberButtons.forEach(e => {
         displayData += elementText
         display.textContent = displayData
     })
+})
+operatorButtons.forEach(e => {
+    e.addEventListener('click', function () {
+        elementText = e.textContent
+        displayData += elementText
+        display.textContent = displayData
+    })
+})
+clearButton.addEventListener('click', function () {
+    displayData = ""
+    display.textContent = displayData
 })
