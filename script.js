@@ -1,6 +1,9 @@
 //calculator variables
-let operandOne = 0
-let operandTwo = 0
+const numberButtons = document.querySelectorAll('.btn-number')
+const operatorButtons = document.querySelectorAll('.btn-operator')
+const clearButton = document.querySelector('.btn-clear')
+let operandOne = null
+let operandTwo = null
 let operator = ""
 //operate function
 function operate (operator, operandOne) {
@@ -35,4 +38,8 @@ function multiplyValues (inputOne, inputTwo) {
 function divideValues (inputOne, inputTwo) {
     return (inputOne/inputTwo) 
 }
-
+//display function
+numberButtons.forEach(e => {
+    e.addEventListener('click', function () {   
+    })
+})
