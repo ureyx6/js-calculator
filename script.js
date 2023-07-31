@@ -28,7 +28,11 @@ function operate(operateOne, operateTwo) {
         return multiplyValues(operateOne, operateTwo);
     }
     else if (operator == "/") {
+        if (operateTwo == 0) {
+            return "STOP NOW"
+        } else {
         return divideValues(operateOne, operateTwo).toFixed(2);
+        }
     }
 }
 
@@ -80,7 +84,7 @@ operatorButtons.forEach(e => {
 
         } else if (operandOne === null) {
             operator = e.textContent
-            operandOne = displayData
+            operandOne = display.textContent;
             displayData = ""
             display.textContent = e.textContent;
             return;
@@ -93,4 +97,13 @@ clearButton.addEventListener('click', function () {
     reset();
     display.textContent = ""
     displayData = ""
+})
+equalsButton.addEventListener ('click', function () {
+    operandTwo = display.textContent
+    result = operate(parseInt(operandOne), parseInt(operandTwo))
+    display.textContent = result
+    operandOne = null;
+    operandTwo = null;
+    return;
+
 })
